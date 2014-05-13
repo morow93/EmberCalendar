@@ -1,0 +1,1 @@
+Application.DateCalendarController = Ember.ObjectController.extend();
