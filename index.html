@@ -12,15 +12,15 @@
     <script src="js/libs/localstorage_adapter.js"></script>	
   </head>
   <body>
-    <script type="text/x-handlebars" data-template-name="application/index/datecalendar">
-        datecalendar
+    <script type="text/x-handlebars" data-template-name="yearmonthday">
+        <p>Какое сегодня число</p>
+        <p>day {{day}}</p>
+        <p>month {{month}}</p>
+        <p>year {{year}}</p>
 	</script>	
-    <script type="text/x-handlebars" data-template-name="application/index">
-        <p>index</p>     
-        {{outlet}}  
-	</script>
+
     <script type="text/x-handlebars" data-template-name="application">
-        <p>application</p>
+        <p>Одностраничное приложение</p>
         {{outlet}}
     </script>
     

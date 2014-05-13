@@ -1,1 +1,4 @@
-Application.DateCalendarController = Ember.ObjectController.extend();
+Application.YearmonthdayController = Ember.ObjectController.extend({
+    actions: {
+    }
+});
