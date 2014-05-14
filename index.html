@@ -13,10 +13,12 @@
   </head>
   <body>
     <script type="text/x-handlebars" data-template-name="yearmonthday">
-        <p>Какое сегодня число</p>
-        <p>day {{day}}</p>
-        <p>month {{month}}</p>
-        <p>year {{year}}</p>
+        <p>Сегодня</p>
+        <p>{{day}}.{{getStringMonth}}.{{year}}</p>
+        <a href="#" class="btn btn-default" {{ action "prevYear"  }}>Предыдущий год</a>
+        <a href="#" class="btn btn-default" {{ action "prevMonth" }}>Предыдущий месяц</a>        
+        <a href="#" class="btn btn-default" {{ action "nextMonth" }}>Следующий месяц</a>
+        <a href="#" class="btn btn-default" {{ action "nextYear"  }}>Следующий год</a>
 	</script>	
 
     <script type="text/x-handlebars" data-template-name="application">
@@ -25,6 +27,6 @@
     </script>
     
     <script src="js/app.js"></script>
-    <script src="js/controllers/DateCalendarController.js"></script>
+    <script src="js/controllers/YearmonthdayController.js"></script>
   </body>
 </html>
