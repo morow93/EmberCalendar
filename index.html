@@ -19,14 +19,25 @@
         <a href="#" class="btn btn-default" {{ action "prevMonth" }}>Предыдущий месяц</a>        
         <a href="#" class="btn btn-default" {{ action "nextMonth" }}>Следующий месяц</a>
         <a href="#" class="btn btn-default" {{ action "nextYear"  }}>Следующий год</a>
+        
+        <table>
+            {{#each week in getMonth}}
+              <tr>
+                {{#each day in week}}
+                  <td>{{day}}</td>
+                {{/each}}
+              </tr>
+            {{/each}}
+        </table>
 	</script>	
 
     <script type="text/x-handlebars" data-template-name="application">
-        <p>Одностраничное приложение</p>
+        <p>Календарь</p>
         {{outlet}}
     </script>
     
     <script src="js/app.js"></script>
+    <script src="js/router.js"></script>
     <script src="js/controllers/YearmonthdayController.js"></script>
   </body>
 </html>
