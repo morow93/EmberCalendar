@@ -14,38 +14,34 @@
   <body>
     <script type="text/x-handlebars" data-template-name="yearmonthday">     
         <div class = "container">
-            <p style="text-align: center; padding-top: 20px;">{{day}}.{{month}}.{{year}}</p>
             <table class = "calendar">
-                <tr class = "calendar-head">
-                    <td><a href="#" {{ action "prevYear"  }}> << </a></td>
-                    <td>{{year}}</td>
-                    <td><a href="#" {{ action "nextYear"  }}> >> </a></td>
-                </tr>
-                <tr class = "calendar-head">
-                    <td><a href="#" {{ action "prevMonth"  }}> < </a></td>
-                    <td>{{getStringMonth}}</td>
-                    <td><a href="#" {{ action "nextMonth"  }}> > </a></td>
-                </tr>
-                <tr class = "calendar-body">
-                    <td>
-                        <table>
-                            <thead>
-                                <tr>
-                                <td>Пн</td><td>Вт</td><td>Ср</td><td>Чт</td><td>Пт</td><td>Сб</td><td>Вс</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {{#each week in getMonth}}
-                              <tr>
-                                {{#each day in week}}
-                                  <td>{{day}}</td>
-                                {{/each}}
-                              </tr>
-                            {{/each}}
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td colspan="7" class = "td-center" >{{day}}.{{month}}.{{year}}</td>                              
+                    </tr>
+                    <tr>
+                        <td><a href="#" {{ action "prevYear"  }}> << </a></td>
+                        <td colspan="5" class = "td-center" >{{year}}</td>
+                        <td><a href="#" {{ action "nextYear"  }}> >> </a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" {{ action "prevMonth"  }}> < </a></td>
+                        <td colspan="5" class = "td-center" >{{getStringMonth}}</td>
+                        <td><a href="#" {{ action "nextMonth"  }}> > </a></td>
+                    </tr>
+                    <tr>
+                        <td>Пн</td><td>Вт</td><td>Ср</td><td>Чт</td><td>Пт</td><td>Сб</td><td>Вс</td>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each week in getMonth}}
+                  <tr>
+                    {{#each day in week}}
+                      <td>{{day}}</td>
+                    {{/each}}
+                  </tr>
+                {{/each}}
+                </tbody>
             </table>
         </div>
 	</script>	

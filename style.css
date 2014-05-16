@@ -1,14 +1,12 @@
 .container {
     margin: 0 auto;
     width: 50%;
-    background-color: lightgreen;
 }
+
+.td-center{
+    text-align: center;
+}
+
 .calendar{
     margin: 0 auto;
-    widht: 100%;
-    background-color: lightgrey;
-}
-.calendar-head > td{
-    width: 30%;
-    text-align: center;
 }
