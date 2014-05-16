@@ -40,9 +40,9 @@ Application.YearmonthdayController = Ember.ObjectController.extend({
                 mas[0][k] = eachDay++;
                 
             }
-            else{
-                mas[0][k]="*";
-            }
+//            else{
+//                mas[0][k]="*";
+//            }
         }    
         var quantityOfArrays = Math.ceil((totalDays - eachDay)/7);
         for(var i = 1; i < quantityOfArrays + 1; ++i){
@@ -51,8 +51,8 @@ Application.YearmonthdayController = Ember.ObjectController.extend({
                 if (eachDay <= totalDays){
                     mas[i][j] = eachDay++;
                 }
-                else
-                    mas[i][j] = "*";
+//                else
+//                    mas[i][j] = "*";
             }
         }
           
