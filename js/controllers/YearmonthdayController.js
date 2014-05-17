@@ -37,26 +37,34 @@ Application.YearmonthdayController = Ember.ObjectController.extend({
         mas[0] = [];
         for (var k = 0; k < 7; ++k){
             if (k >= (dayOfWeek - 1)){
-                mas[0][k] = eachDay++;
-                
+                mas[0][k] = Ember.Object.create({num: eachDay++, isToday: false });      
+                    var d = new Date();
+                    if (
+                        (Number)(this.get('year')) === (Number)(d.getFullYear()) &&
+                        (Number)(this.get('month')) === (Number)(d.getMonth() + 1) &&
+                        (Number)(mas[0][k].num) === (Number)(new Date().getDate())
+                    )                    
+                        mas[0][k].isToday = true;                 
             }
-//            else{
-//                mas[0][k]="*";
-//            }
         }    
         var quantityOfArrays = Math.ceil((totalDays - eachDay)/7);
         for(var i = 1; i < quantityOfArrays + 1; ++i){
             mas[i] = [];
             for(var j = 0; j < 7; ++j){
                 if (eachDay <= totalDays){
-                    mas[i][j] = eachDay++;
+                    mas[i][j] = Ember.Object.create({num: eachDay++, isToday: false });      
+                    var d = new Date();
+                    if (
+                        (Number)(this.get('year')) === (Number)(d.getFullYear()) &&
+                        (Number)(this.get('month')) === (Number)(d.getMonth() + 1) &&
+                        (Number)(mas[i][j].num) === (Number)(new Date().getDate())
+                    )                    
+                        mas[i][j].isToday = true;  
                 }
-//                else
-//                    mas[i][j] = "*";
             }
-        }
-          
+        }          
         return mas;
+    
       }.property('month', 'year'),
                        
     actions: {

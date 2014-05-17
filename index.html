@@ -17,7 +17,7 @@
             <table class = "calendar">
                 <thead>
                     <tr>
-                        <td colspan="7" class = "td-center" >{{day}}.{{month}}.{{year}}</td>                              
+                        <td colspan="7" class = "td-center" >Календарь</td>                              
                     </tr>
                     <tr>
                         <td><a href="#" {{ action "prevYear"  }}> << </a></td>
@@ -37,7 +37,11 @@
                 {{#each week in getMonth}}
                   <tr>
                     {{#each day in week}}
-                      <td>{{day}}</td>
+                        {{#if day}}
+                            <td {{bind-attr class="day.isToday:today"}}>{{day.num}}</td>
+                        {{else}}
+                            <td></td>
+                        {{/if}}>
                     {{/each}}
                   </tr>
                 {{/each}}

@@ -10,3 +10,7 @@
 .calendar{
     margin: 0 auto;
 }
+
+.today{
+    background-color: lightgrey;
+}
